@@ -12,7 +12,7 @@ public class BubbleSort {
     public static void main(String[] args) {
         System.out.println("BubbleSort.main");
 
-        int[] tmpArr = SortingUtil.generate(20, 50);
+        int[] tmpArr = SortingUtil.generate(10, 50);
 
         test(tmpArr);
     }
@@ -67,5 +67,5 @@ public class BubbleSort {
             }
         }
     }
-    
+
 }
