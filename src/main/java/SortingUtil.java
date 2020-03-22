@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class SortingUtil {
     public static int[] generate(int size, int bound) {
-        Random rand = new Random(33);
+        Random rand = new Random(System.currentTimeMillis());
 
         int[] tmpArr = new int[size];
 
@@ -36,5 +36,12 @@ public class SortingUtil {
         }
 
         return true;
+    }
+
+    public static int randomSelect(int left, int right) {
+        Random rand = new Random();
+        int randValue = rand.nextInt(right-left+1);
+
+        return left + randValue;
     }
 }
