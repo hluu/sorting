@@ -1,12 +1,12 @@
 import org.testng.Assert;
 
 import java.util.Arrays;
-import java.util.Random;
+
 
 /**
  * General approach
- * - pick a pivot value
- * - part the array into two partitions
+ * - pick a pivot value (could be random, left, right, middle value of (left, right, mid)
+ * - partition the array into two partitions
  *   - (orange) where the values of first partition is smaller than the pivot value
  *   - (green) where the values of second partition is smaller than the pivot value
  * - move the pivot value into place
@@ -36,7 +36,13 @@ public class QuickSort {
 
     }
 
+    /**
+     * Main entry point, need a helper to recursion
+     *
+     * @param arr
+     */
     public static void quickSort(int[] arr) {
+
         quickSortHelper(arr, 0, arr.length-1);
     }
 
@@ -67,7 +73,8 @@ public class QuickSort {
                 SortingUtil.swap(arr, orangeIdx, greenIdx);
             }
         }
-        // move the pivot into its correct position
+        // what must be true at this point?
+        // move the pivot into its correct position at orangeIdx
         SortingUtil.swap(arr, left, orangeIdx);
 
         // sort left side
