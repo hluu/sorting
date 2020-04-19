@@ -94,11 +94,13 @@ public class QuickSelect {
         int pivotIdx = SortingUtil.randomSelect(left, right);
 
         SortingUtil.swap(arr, left, pivotIdx);
+        int pivotValue = arr[left];
 
+        // boundary of where the elements are less than pivot value
         int orangeIdx = left;
         for (int greenIdx = left+1; greenIdx <= right; greenIdx++) {
             // swap when encounter a number less than the pivot value
-            if (arr[greenIdx] < arr[left]) {
+            if (arr[greenIdx] < pivotValue) {
                 // swap with orangeIdx++
                 orangeIdx++;
                 SortingUtil.swap(arr, orangeIdx, greenIdx);
@@ -107,7 +109,7 @@ public class QuickSelect {
         // move the pivot into its correct position
         SortingUtil.swap(arr, left, orangeIdx);
 
-        // now decide what to do based on the orangeIdx and k
+        // now decide what to do base on the orangeIdx and k
         // there are 3 possible choices
         if (k == orangeIdx) {
             // we found what we are looking for
