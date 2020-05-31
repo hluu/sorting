@@ -91,15 +91,15 @@ public class CountingInversions {
         int inversionCnt = 0;
         int nIdx = start;
 
-        // merging
+        // merging - invariant - both arrays are already sorted
         while (lIdx < left.length && rIdx < right.length) {
             if (left[lIdx] <= right[rIdx]) {
                 nums[nIdx++] = left[lIdx++];
             } else {
-                // this is when numbers are out of order
+                // this is when numbers are out of order (inversion)
                 nums[nIdx++] = right[rIdx++];
                 // the total number of inversions is the remaining numbers
-                // from lIdx to the end of the left hand side of the array, why?
+                // from lIdx to the end of the left array, why?
                 // because right[rIdx] is smaller than left[lIdx] and all the elements to the
                 // right of lIdx
                 inversionCnt += left.length - lIdx;

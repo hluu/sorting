@@ -57,6 +57,7 @@ public class MergeSort {
             }
         }
 
+        // the remaining elements
         while (lIdx  < leftSide.length) {
             nums[nIdx++] = leftSide[lIdx++];
         }
