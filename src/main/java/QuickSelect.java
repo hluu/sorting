@@ -1,3 +1,5 @@
+import org.testng.Assert;
+
 import java.util.Arrays;
 
 /**
@@ -38,6 +40,8 @@ public class QuickSelect {
                 k, expectedKthLargest, actual);
 
         System.out.println("\n");
+
+        Assert.assertEquals(expectedKthLargest, actual);
 
     }
 

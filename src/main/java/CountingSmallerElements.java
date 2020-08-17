@@ -63,7 +63,7 @@ public class CountingSmallerElements {
      * How to leverage the merge step to figure out the number of smaller values
      * while merging.
      *
-     * Need an object to prepresent a pair of (elm value and elm index)
+     * Need an object to represent a pair of (elm value and elm index)
      *
      * @param nums
      * @return
